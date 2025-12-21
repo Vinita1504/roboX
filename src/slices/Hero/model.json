@@ -1,0 +1,66 @@
+{
+  "type": "SharedSlice",
+  "id": "hero_with_cta_image_and_highlight_text",
+  "name": "Hero",
+  "variations": [
+    {
+      "id": "with_highlight_and_supporting_text",
+      "name": "With Highlight & Supporting Text",
+      "description": "This variation includes a main title, subtitle, callouts with optional highlight, background/supporting image, supporting description, and a main CTA button.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Main Title"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle"
+          }
+        },
+        "supporting_text": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong",
+            "label": "Supporting Description"
+          }
+        },
+        "callouts": {
+          "type": "Group",
+          "config": {
+            "label": "Highlight Callouts",
+            "fields": {
+              "callout_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Callout Text"
+                }
+              },
+              "highlight": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Highlight"
+                }
+              }
+            }
+          }
+        },
+        "primary_cta": {
+          "type": "Link",
+          "config": {
+            "label": "Primary Call to Action",
+            "allowText": true,
+            "repeat": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

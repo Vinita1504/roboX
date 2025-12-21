@@ -2,4 +2,6 @@
 
 import dynamic from "next/dynamic";
 
-export const components = {};
+export const components = {
+  hero_with_cta_image_and_highlight_text: dynamic(() => import("./Hero")),
+};

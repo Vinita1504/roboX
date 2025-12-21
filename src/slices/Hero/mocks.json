@@ -1,0 +1,64 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "with_highlight_and_supporting_text",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "known",
+				"type": "Text"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "police",
+				"type": "Text"
+			},
+			"supporting_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud consectetur id magna qui. Voluptate mollit amet deserunt quis."
+						}
+					}
+				]
+			},
+			"callouts": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"callout_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "already",
+									"type": "Text"
+								}
+							],
+							[
+								"highlight",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": true
+								}
+							]
+						]
+					}
+				]
+			},
+			"primary_cta": {
+				"key": "b12f1bce-4a99-40b3-bfd5-17bd8fb99ec7",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "world"
+				}
+			}
+		},
+		"items": []
+	}
+]

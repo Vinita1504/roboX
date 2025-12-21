@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = HeroWithCtaImageAndHighlightTextSlice;
 
 /**
  * Content for Homepage documents
@@ -136,6 +136,126 @@ export type HomepageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomepageDocument;
 
+/**
+ * Item in *Hero → With Highlight & Supporting Text → Primary → Highlight Callouts*
+ */
+export interface HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingTextPrimaryCalloutsItem {
+  /**
+   * Callout Text field in *Hero → With Highlight & Supporting Text → Primary → Highlight Callouts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_cta_image_and_highlight_text.with_highlight_and_supporting_text.primary.callouts[].callout_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  callout_text: prismic.KeyTextField;
+
+  /**
+   * Highlight field in *Hero → With Highlight & Supporting Text → Primary → Highlight Callouts*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_cta_image_and_highlight_text.with_highlight_and_supporting_text.primary.callouts[].highlight
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  highlight: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *Hero → With Highlight & Supporting Text → Primary*
+ */
+export interface HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingTextPrimary {
+  /**
+   * Main Title field in *Hero → With Highlight & Supporting Text → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_cta_image_and_highlight_text.with_highlight_and_supporting_text.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *Hero → With Highlight & Supporting Text → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_cta_image_and_highlight_text.with_highlight_and_supporting_text.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Supporting Description field in *Hero → With Highlight & Supporting Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_cta_image_and_highlight_text.with_highlight_and_supporting_text.primary.supporting_text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  supporting_text: prismic.RichTextField;
+
+  /**
+   * Highlight Callouts field in *Hero → With Highlight & Supporting Text → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_cta_image_and_highlight_text.with_highlight_and_supporting_text.primary.callouts[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  callouts: prismic.GroupField<
+    Simplify<HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingTextPrimaryCalloutsItem>
+  >;
+
+  /**
+   * Primary Call to Action field in *Hero → With Highlight & Supporting Text → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_with_cta_image_and_highlight_text.with_highlight_and_supporting_text.primary.primary_cta
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  primary_cta: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * With Highlight & Supporting Text variation for Hero Slice
+ *
+ * - **API ID**: `with_highlight_and_supporting_text`
+ * - **Description**: This variation includes a main title, subtitle, callouts with optional highlight, background/supporting image, supporting description, and a main CTA button.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingText =
+  prismic.SharedSliceVariation<
+    "with_highlight_and_supporting_text",
+    Simplify<HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingTextPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroWithCtaImageAndHighlightTextSliceVariation =
+  HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingText;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero_with_cta_image_and_highlight_text`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroWithCtaImageAndHighlightTextSlice = prismic.SharedSlice<
+  "hero_with_cta_image_and_highlight_text",
+  HeroWithCtaImageAndHighlightTextSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -161,6 +281,11 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeroWithCtaImageAndHighlightTextSlice,
+      HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingTextPrimaryCalloutsItem,
+      HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingTextPrimary,
+      HeroWithCtaImageAndHighlightTextSliceVariation,
+      HeroWithCtaImageAndHighlightTextSliceWithHighlightAndSupportingText,
     };
   }
 }
