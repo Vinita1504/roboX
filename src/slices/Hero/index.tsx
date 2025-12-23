@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "@/src/components/Bounded";
+import Navbar from "@/src/components/Navbar";
 
 /**
  * Props for `HeroWithCtaImageAndHighlightText`.
@@ -24,48 +25,11 @@ const HeroWithCtaImageAndHighlightText: FC<
       fullWidth
       className="relative min-h-screen bg-background overflow-hidden"
     >
-      {/* Header Section */}
-      <header className="absolute top-0 left-0 right-0 z-50 flex items-start justify-between p-6 md:p-8 lg:p-12">
-        {/* Brand Section - Top Left */}
-        <div className="flex flex-col">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-2">
-            {slice.primary.title || "ROBOX"}
-          </h1>
-          {slice.primary.subtitle && (
-            <p className="text-sm md:text-base lg:text-lg text-foreground/90">
-              {slice.primary.subtitle}
-            </p>
-          )}
-        </div>
-
-        {/* Navigation - Top Right */}
-        <div className="flex items-center gap-4">
-          <button className="px-4 py-2 rounded-lg border border-border bg-background text-foreground hover:bg-muted transition-colors text-sm md:text-base">
-            Get in Touch
-          </button>
-          <button className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:bg-muted transition-colors">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              className="text-foreground"
-            >
-              <path
-                d="M3 5h14M3 10h14M3 15h14"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
-        </div>
-      </header>
-
+      <Navbar />
       {/* Video Section - Center */}
       <div className="absolute inset-0  flex items-center justify-center z-10">
         <div className="relative w-full h-full max-w-4xl mx-auto">
-           {/* Video above overlay */}
+          {/* Video above overlay */}
           <video
             autoPlay
             // loop

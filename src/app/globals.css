@@ -25,7 +25,7 @@
 
 .dark {
   --background: 0 0% 3.9%;
-  --foreground: 0 0% 98%;
+  --foreground: 0 0% 80%;
   --card: 0 0% 3.9%;
   --card-foreground: 0 0% 98%;
   --popover: 0 0% 3.9%;
@@ -65,12 +65,13 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-anton);
 }
 
 body {
   background: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
