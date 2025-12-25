@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
 import "./globals.css";
+import PageTransition from "../components/PageTransition";
+import PageLoader from "../components/PageLoader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,8 +31,12 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body
         className={`${anton.variable} ${inter.className} antialiased`}
-      >
-        {children}
+      > 
+        <PageTransition>
+         <PageLoader />
+
+         {children}
+        </PageTransition>
       </body>
     </html>
   );
